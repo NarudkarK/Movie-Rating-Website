@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+ 
+
+    <title>Movie Details</title>
+    <!-- common css style css  -->
+      <link rel="stylesheet" href="../Styles/style.css">
+      <!-- extenal css for movie page  -->
+      <link rel="stylesheet" href="./moviePage.css">
+      <!-- here we use font awsome script toolkit -->
+    <script
+    src="https://kit.fontawesome.com/74894dafb2.js"
+    crossorigin="anonymous"
+  ></script>
+    <!-- google font link for awsome text  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<!-- body section begins here -->
+<body>
+ <!-- Login form -->
+ 
+
+    <!-- this is the main container of website  -->
+    <section class="main">
+ <!-- navigation section html code which include logo(Menu) , searchBox , watchList(favorite movie list) , imbdPro(popup) section & signIn Imdb Functionality    -->
+         <nav class="nav-menu">
+
+             <!-- nav 1st child  -->
+              <div class="logo-menu" onclick=showMenu()>
+                <div class="imdb-logo">
+                  <h4 class="hover imdbpro" id="im-pro">Rate<span id="diff-color">Flix</span> </h4>
+                </div>
+                <div class="bar-menu hover">
+                    <i class="fa-solid fa-bars" ></i> <span>Menu</span>
+                </div>
+              </div>
+                 <!-- nav second child  -->
+              <div class="search-box">
+                <div id="search-icon"><a href="../index.html"> <i class="fa-solid fa-magnifying-glass"></i></a></div>
+              </div>
+              <!-- nav 3rd child  -->
+              <div class="fabs-login">
+                <h4 class="hover imdbpro">Rate<span id="diff-color">Flix</span>  |</h4>
+                 <!-- this small page pop will be shown when you hover IMDbPro option  -->
+<!-- ----------- -->
+               
+<!-- --------------- -->
+                 <!-- 4th child  -->
+                <h3 class="hover"><a href="../WatchList/myfav.html"><i class="fa-solid fa-folder-plus"></i> Watchlist</a></h3>
+                <h3 class="hover" id="signin"><a href="../form2/form/index.html">Sign In</a></h3>
+              </div>
+         </nav>
+          
+        
+
+          <!-- this is the back button to go to the main page  -->
+    <a href="../index.html"> <button id="return-to-home"><i class="fas fa-chevron-left"></i>Home</button></a>
+
+    <!-- main div  -->
+ <div id="main">
+
+  <!-- container for movie list coming from IMDB API here i access Api proprty and functionality and form dynamic Html Element that append here-->
+        <!-- movie is displayed here  -->
+    <div id="movie-display">
+       
+        <!-- i write this dummy text for upcoming data when we access TMDB API  -->
+
+        <!-- <div class="each-movie-page">
+
+            <div class="movie-poster">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB06zANAWkdMC2XZazOOJKxtCR7JvgTml-wQ&usqp=CAU" alt="Poster">
+            </div>
+
+          <div class="movie-details">
+
+              <div class="title">  Thor</div>
+             <div class="tagline">Movie tagline</div>
+              <div style="display: flex;"> 
+                  <div class="movie-duration">
+                      <b><i class="fas fa-clock"></i></b> 4.22
+                  </div>
+                 <div class="release-date">
+                      <b>Raleased</b>: 2023-05-01
+                  </div>
+              </div>
+  
+               <div class="rating">
+                  <b> Rating</b>: 8.6
+              </div>
+  
+              <div class="trailer-div" id="trailer-div-btn">
+                  <i class="fab fa-youtube"></i>
+              </div>
+  
+              <div id="trailer-video-div">
+                  <button id="remove-video-player"><i class="fas fa-times"></i></button>
+                  <br>
+                  <span><iframe width="560" height="315" src=${youtubeURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>   
+              </div>
+      
+              <div class="plot">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit soluta enim tenetur libero placeat. Autem vitae, magnam repellendus molestiae quaerat libero veritatis inventore, expedita, quo iste explicabo ipsam! Commodi reprehenderit doloribus expedita eveniet explicabo sint perferendis reiciendis debitis pariatur ratione. Odio modi similique impedit maiores magnam eaque optio repellat id.
+              </div>
+             </div>
+
+          </div/>
+
+        </div> -->
+ 
+
+    </div>
+ </div>
+
+ <!-- movie comment--
+ 
+ rating -->
+<div class="rate-container">
+  <div class="container" id="popup">
+    <div class="star">★</div>
+   <div class="post">
+       <div class="text">RATE THIS</div>
+       <div class="edit"  onclick="closePopup()"><i class="fa-solid fa-xmark"></i></div>
+   </div>
+   <div class="star-widget">
+       <input type="radio" name="rate" id="rate-5">
+       <label for="rate-5" class="fas fa-start"><i class="fa-solid fa-star"></i></label>
+
+       <input type="radio" name="rate" id="rate-4">
+       <label for="rate-4" class="fa fa-start"><i class="fa-solid fa-star"></i></label>
+
+       <input type="radio" name="rate" id="rate-3">
+       <label for="rate-3" class="fa fa-start"><i class="fa-solid fa-star"></i></label>
+
+       <input type="radio" name="rate" id="rate-2">
+       <label for="rate-2" class="fa fa-start"><i class="fa-solid fa-star"></i></label>
+
+       <input type="radio" name="rate" id="rate-1">
+       <label for="rate-1" class="fa fa-start"><i class="fa-solid fa-star"></i></label>
+
+
+           <div class="btn">
+               <button >Rate</button>
+           </div>
+   
+   </div>
+ </div>
+</div> 
+
+
+ 
+ 
+    <!-- external javascript for movie page  --> 
+   <script type="text/javascript" src="./moviePage.js"></script> 
+  </section>
+ 
+  <!-- comment section -->
+  <div class="Comment-section">
+  <div class="comment-container">
+    <h2>Comments</h2>
+    <form>
+        <h6>Commenting as</h6>
+     <textarea id="cmt-text-area" placeholder='Add Your Comment' onclick="showCmtBtn()"></textarea>
+      <div class="cmt-btn" >
+        <button id='clear'>Cancel</button>
+        <input type="submit" value='Comment' class="cmt">
+      </div>
+    </form>
+  </div>
+</div>
+  
+</body>
+</html>
+
+
+    
